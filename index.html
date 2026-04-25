@@ -367,9 +367,10 @@ function retakePhoto() {
 async function doClock(type) {
   if (!empData) return;
 
-  // GPS 驗證
+  // GPS 驗證（測試帳號 9999 跳過）
+  const isTestAccount = empData.emp_id === '9999';
   const store = STORES.find(s => s.code === currentStore.code);
-  if (store && store.lat && GPS_RADIUS < 9999) {
+  if (!isTestAccount && store && store.lat && GPS_RADIUS < 9999) {
     if (!gpsPos) { showToast('error','GPS尚未定位，請稍候'); return; }
     const dist = distanceM(gpsPos.coords.latitude, gpsPos.coords.longitude, store.lat, store.lng);
     if (dist > GPS_RADIUS) { showToast('error',`距離門市${Math.round(dist)}m，超出範圍`); return; }
@@ -386,6 +387,7 @@ async function doClock(type) {
     device: /iPhone/.test(navigator.userAgent)?'iPhone':/Android/.test(navigator.userAgent)?'Android':'Other',
     photo: photoB64 || ''
   };
+  console.log('photo size:', photoB64 ? photoB64.length : 'null');
 
   showToast('','打卡中...');
   try {
