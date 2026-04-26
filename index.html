@@ -13,11 +13,9 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC','PingFang TC',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center}
-
 .header{width:100%;background:linear-gradient(135deg,#1a1d27,#21253a);border-bottom:1px solid var(--border);padding:16px 20px 12px;text-align:center;position:sticky;top:0;z-index:10}
 .header-brand{font-size:11px;color:var(--accent);letter-spacing:3px;margin-bottom:4px}
 .header-title{font-size:18px;font-weight:700}
-
 .clock-bar{background:var(--card);border-bottom:1px solid var(--border);padding:10px 20px;width:100%;display:flex;justify-content:space-between;align-items:center}
 #live-clock{font-size:20px;font-weight:700;color:var(--accent);letter-spacing:2px}
 #live-date{font-size:12px;color:var(--muted);margin-top:2px}
@@ -27,12 +25,9 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC','PingFang
 .gps-dot.err{background:var(--red)}
 .gps-dot.loading{background:var(--accent);animation:pulse 1s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-
 .container{width:100%;max-width:480px;padding:20px 16px 40px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
 .card-title{font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
-
-/* Step 1: 輸入編號 */
 .id-input{width:100%;background:var(--card2);border:2px solid var(--border);color:var(--text);padding:16px;border-radius:12px;font-size:24px;font-weight:700;outline:none;letter-spacing:4px;text-align:center;margin-bottom:10px}
 .id-input:focus{border-color:var(--accent)}
 .numpad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
@@ -40,15 +35,11 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC','PingFang
 .numkey:active{background:var(--accent);color:#fff;transform:scale(.96)}
 .numkey.del{font-size:16px;color:var(--muted)}
 .btn-confirm{width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:#fff;padding:16px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:4px}
-
-/* Step 2: 員工確認 */
 #emp-panel{display:none}
 .emp-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;color:#fff;margin:0 auto 12px}
 .emp-name{font-size:22px;font-weight:700;text-align:center}
 .emp-store{font-size:13px;color:var(--accent);text-align:center;margin-top:4px}
 .emp-id{font-size:11px;color:var(--muted);text-align:center;margin-top:2px}
-
-/* 門市切換 */
 #store-selector{display:none;margin-top:16px}
 .store-label{font-size:12px;color:var(--muted);margin-bottom:8px}
 .store-toggle{background:var(--card2);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:10px;font-size:14px;cursor:pointer;width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between}
@@ -57,8 +48,6 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC','PingFang
 .store-option:last-child{border-bottom:none}
 .store-option:hover{background:#2d3347}
 .store-code-badge{font-size:10px;background:var(--accent);color:#fff;padding:2px 6px;border-radius:4px;font-weight:700}
-
-/* Step 3: 拍照 */
 #photo-panel{display:none;margin-top:16px}
 .photo-title{font-size:12px;color:var(--muted);margin-bottom:8px;text-align:center}
 #camera-wrap{position:relative;border-radius:12px;overflow:hidden;background:#000;margin-bottom:10px}
@@ -67,8 +56,6 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC','PingFang
 .photo-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .btn-snap{background:linear-gradient(135deg,#27ae60,#2ecc71);border:none;color:#fff;padding:14px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer}
 .btn-retake{background:var(--card2);border:1px solid var(--border);color:var(--muted);padding:14px;border-radius:12px;font-size:14px;cursor:pointer}
-
-/* 打卡按鈕 */
 #action-panel{display:none;margin-top:16px}
 .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .btn-action{padding:18px 10px;border-radius:12px;border:none;font-size:14px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;transition:all .15s}
@@ -79,8 +66,6 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC','PingFang
 .btn-action.btn-break-e  {background:linear-gradient(135deg,#6c5ce7,#a29bfe);color:#fff}
 .btn-action.btn-clock-out{background:linear-gradient(135deg,#c0392b,#e74c3c);color:#fff}
 .btn-action:disabled{opacity:.35;cursor:not-allowed}
-
-/* 今日記錄 */
 #today-records{display:none;margin-top:12px}
 .rec-title{font-size:11px;color:var(--muted);letter-spacing:1px;margin-bottom:8px}
 .rec-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
@@ -93,10 +78,7 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC','PingFang
 .rec-type{flex:1;font-weight:600}
 .rec-time{color:var(--muted);font-family:monospace}
 .rec-store{font-size:11px;color:var(--accent)}
-
 .btn-reset{width:100%;margin-top:12px;background:transparent;border:1px solid var(--border);color:var(--muted);padding:10px;border-radius:10px;font-size:13px;cursor:pointer}
-
-/* Toast */
 #toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#2d3347;color:var(--text);padding:14px 24px;border-radius:30px;font-size:14px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.4);z-index:100;pointer-events:none;opacity:0;transition:opacity .3s;max-width:90vw;text-align:center}
 #toast.show{opacity:1}
 #toast.success{background:#1a4a2e;border:1px solid var(--green);color:var(--green)}
@@ -104,12 +86,10 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC','PingFang
 </style>
 </head>
 <body>
-
 <div class="header">
   <div class="header-brand">麻媽家・涼三伯・開拌</div>
   <div class="header-title">員工打卡系統</div>
 </div>
-
 <div class="clock-bar">
   <div>
     <div id="live-clock">00:00:00</div>
@@ -120,10 +100,7 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC','PingFang
     <span id="gps-text">GPS定位中...</span>
   </div>
 </div>
-
 <div class="container">
-
-  <!-- Step 1: 輸入員工編號 -->
   <div class="card" id="id-card">
     <div class="card-title">👤 輸入員工編號</div>
     <input class="id-input" id="emp-id-input" type="text" maxlength="6" placeholder="- - - - - -" readonly>
@@ -143,16 +120,12 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC','PingFang
     </div>
     <button class="btn-confirm" onclick="lookupEmp()">查詢 →</button>
   </div>
-
-  <!-- Step 2 & 3: 員工確認 + 拍照 + 打卡 -->
   <div class="card" id="emp-panel">
     <div class="card-title">✅ 員工確認</div>
     <div class="emp-avatar" id="emp-avatar">?</div>
     <div class="emp-name"  id="emp-name">-</div>
     <div class="emp-store" id="emp-store-label">-</div>
     <div class="emp-id"    id="emp-id-label">-</div>
-
-    <!-- 跨店切換 -->
     <div id="store-selector">
       <div class="store-label">今天在其他門市？點此切換</div>
       <button class="store-toggle" onclick="toggleStoreDD()">
@@ -160,8 +133,6 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC','PingFang
       </button>
       <div class="store-dropdown" id="store-dropdown"></div>
     </div>
-
-    <!-- 拍照區 -->
     <div id="photo-panel">
       <div class="photo-title">📸 請拍攝本人自拍照（點下方按鈕）</div>
       <input type="file" id="photo-input" accept="image/*" capture="user" onchange="onPhotoSelected(event)">
@@ -171,8 +142,6 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC','PingFang
         <button class="btn-retake" id="btn-retake" style="display:none" onclick="retakePhoto()">重拍</button>
       </div>
     </div>
-
-    <!-- 打卡按鈕 -->
     <div id="action-panel">
       <div class="actions">
         <button class="btn-action btn-clock-in"  onclick="doClock('上班')">
@@ -189,26 +158,24 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC','PingFang
         </button>
       </div>
     </div>
-
     <!-- 今日記錄 -->
     <div id="today-records">
       <div class="rec-title">TODAY'S RECORDS</div>
       <div id="rec-list"></div>
     </div>
-
+    <!-- 本週班表 -->
+    <div id="week-schedule" style="display:none;margin-top:12px">
+      <div class="rec-title">📅 本週班表</div>
+      <div id="week-schedule-list" style="font-size:13px;color:var(--muted);padding:8px 0">載入中...</div>
+    </div>
     <button class="btn-reset" onclick="resetAll()">← 換人打卡</button>
   </div>
-
 </div>
 <div id="toast"></div>
-
 <script>
-// ══════════════════════════════════════════════
-//  ⚙️  設定區
-// ══════════════════════════════════════════════
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIpkoa_U-A_VcLLQJ6F-tC6eFzG4TYGAXHgwoXWq0zkobkLgws9vhNW-EpI-zn15so/exec";
-const GPS_RADIUS = 100; // 正式上線
-const PHOTO_REQUIRED = true; // 是否強制拍照
+const GPS_RADIUS = 100;
+const PHOTO_REQUIRED = true;
 
 const STORES = [
   {code:"M001",name:"麻媽家信義店",lat:25.043503,lng:121.575362},
@@ -221,14 +188,95 @@ const STORES = [
   {code:"HQ", name:"總部/中央廚房",lat:25.054288,lng:121.615685},
   {code:"PT", name:"兼職",lat:null,lng:null},
 ];
-// ══════════════════════════════════════════════
+
+// ── 本週班表查詢（跨門市）──
+const SCHEDULE_URLS = {
+  "M001":"https://script.google.com/macros/s/AKfycbwDWSVIpYKf7F4Zlr-mz-byGyfsJfcjYwKQiM27xM8sWTXvS2ZhxR-uF-1i10Y-tGRxNQ/exec",
+  "M002":"https://script.google.com/macros/s/AKfycbzE-xncysAMMPrDCei3PUPMMvfv1gBnkEJUp9sBk0AjbyWaPBKUxOEroRt02Kz3w9QNxA/exec",
+  "M003":"https://script.google.com/macros/s/AKfycbzlC9tcyyW6z5K_WvOoDxwDupq1YBcBkkorFJb8c67RVoN26msBicQhuP8qS4FUPiSOjg/exec",
+  "M004":"https://script.google.com/macros/s/AKfycbwt0tL_9loAOteB5NO9VWsBMV7fE2ohCAyQsbZCEJnGrP585TxRHEPqma0iqnGU7VRaXw/exec",
+  "L001":"https://script.google.com/macros/s/AKfycbxFQPT39n_WOgp6pF2DpnVD3-e5dAsyp4gy05sudcKVo5wzAnKjWLyGLKuyHkpVz9_F/exec",
+  "L002":"https://script.google.com/macros/s/AKfycbyOR-ZK4R7qMu2YtfNy2Fs0pNhD6nJfn8SPsqVotdNfTDcJqiMdPca3aLr3IAPHVz-J/exec",
+  "K001":"https://script.google.com/macros/s/AKfycbwy3OjQkCuOAeWihXDYgECziW6T9rXL7KrsCqKyDk9_vKK2bC2_-JXTtoD1bOujsszC/exec",
+};
+const STORE_SHORT = {
+  "M001":"信義","M002":"內湖737","M003":"安居",
+  "M004":"東湖麻","L001":"東湖涼","L002":"東科","K001":"南軟"
+};
+const WDAYS_S = ['日','一','二','三','四','五','六'];
+
+function getWeekDates() {
+  const today = new Date();
+  const day = today.getDay();
+  const mon = new Date(today);
+  mon.setDate(today.getDate() - (day === 0 ? 6 : day - 1));
+  mon.setHours(0,0,0,0);
+  return Array.from({length:7}, (_,i) => {
+    const d = new Date(mon);
+    d.setDate(mon.getDate() + i);
+    const s = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+    return { dateStr: s, d };
+  });
+}
+
+async function loadWeekSchedule(empId) {
+  const el   = document.getElementById('week-schedule');
+  const list = document.getElementById('week-schedule-list');
+  el.style.display = 'block';
+  list.innerHTML = '<span style="color:var(--muted)">查詢中...</span>';
+  const dates = getWeekDates();
+  const from  = dates[0].dateStr;
+  const to    = dates[6].dateStr;
+  const results = await Promise.all(
+    Object.entries(SCHEDULE_URLS).map(async ([storeId, url]) => {
+      try {
+        const resp = await fetch(`${url}?action=getSchedule&from=${from}&to=${to}`,
+          {signal: AbortSignal.timeout(8000)});
+        const data = await resp.json();
+        if (data.status === 'ok') return { storeId, shifts: data.shifts || [] };
+      } catch(e) {}
+      return { storeId, shifts: [] };
+    })
+  );
+  const myShifts = {};
+  results.forEach(({ storeId, shifts }) => {
+    shifts.forEach(s => {
+      if (String(s.emp_id) === String(empId) && !s.off) {
+        if (!myShifts[s.date]) myShifts[s.date] = [];
+        myShifts[s.date].push({ ...s, storeId });
+      }
+    });
+  });
+  const n = new Date();
+  const todayStr = `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}-${String(n.getDate()).padStart(2,'0')}`;
+  let html = ''; let hasAny = false;
+  dates.forEach(({ dateStr, d }) => {
+    const shifts = myShifts[dateStr] || [];
+    if (shifts.length === 0) return;
+    hasAny = true;
+    const isToday = dateStr === todayStr;
+    const isHol   = d.getDay() === 0 || d.getDay() === 6;
+    const label   = `${d.getMonth()+1}/${d.getDate()}（${WDAYS_S[d.getDay()]}）`;
+    shifts.forEach(s => {
+      html += `<div style="display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--border)">
+        <div style="width:76px;font-size:12px;font-weight:${isToday?'700':'400'};color:${isToday?'var(--accent)':isHol?'var(--muted)':'var(--text)'}">${label}</div>
+        <div style="flex:1">
+          <span style="font-size:11px;background:var(--accent);color:#fff;padding:1px 5px;border-radius:4px;margin-right:5px">${STORE_SHORT[s.storeId]||s.storeId}</span>
+          <span style="font-size:13px;font-weight:600">${s.in}–${s.out}</span>
+          <span style="font-size:11px;color:var(--muted);margin-left:3px">休${s.break}h</span>
+        </div>
+      </div>`;
+    });
+  });
+  list.innerHTML = hasAny ? html : '<div style="color:var(--muted);padding:8px 0">本週尚無排班</div>';
+}
+// ── 以下為原始程式碼 ──
 
 let empData = null;
 let currentStore = null;
 let gpsPos = null;
 let photoB64 = null;
 
-// ── 時鐘 ───────────────────────────────────
 function updateClock() {
   const now = new Date();
   const pad = n => String(n).padStart(2,'0');
@@ -238,7 +286,6 @@ function updateClock() {
 }
 setInterval(updateClock, 1000); updateClock();
 
-// ── GPS ────────────────────────────────────
 function initGPS() {
   if (!navigator.geolocation) { setGPS('err','不支援GPS'); return; }
   navigator.geolocation.watchPosition(
@@ -257,7 +304,6 @@ function distanceM(lat1,lng1,lat2,lng2) {
   return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
 }
 
-// ── 數字鍵盤 ───────────────────────────────
 function numPress(n) {
   const el = document.getElementById('emp-id-input');
   if (el.value.length < 6) el.value += n;
@@ -268,7 +314,6 @@ function numDel() {
 }
 function numClear() { document.getElementById('emp-id-input').value = ''; }
 
-// ── 查詢員工 ───────────────────────────────
 async function lookupEmp() {
   const empId = document.getElementById('emp-id-input').value.trim();
   if (!empId) { showToast('error','請輸入員工編號'); return; }
@@ -280,10 +325,10 @@ async function lookupEmp() {
     currentStore = {code:res.store_code, name:res.store_name};
     showEmpPanel();
     loadTodayRecords();
+    loadWeekSchedule(empId);
   } catch(e) { showToast('error','網路錯誤，請重試'); }
 }
 
-// ── 顯示員工面板 ────────────────────────────
 function showEmpPanel() {
   document.getElementById('id-card').style.display = 'none';
   document.getElementById('emp-panel').style.display = 'block';
@@ -291,8 +336,6 @@ function showEmpPanel() {
   document.getElementById('emp-name').textContent = empData.emp_name;
   document.getElementById('emp-store-label').textContent = currentStore.name;
   document.getElementById('emp-id-label').textContent = 'ID：' + empData.emp_id;
-
-  // 門市下拉
   const dd = document.getElementById('store-dropdown');
   dd.innerHTML = '';
   STORES.forEach(s => {
@@ -304,8 +347,6 @@ function showEmpPanel() {
   });
   document.getElementById('store-dd-label').textContent = currentStore.name;
   document.getElementById('store-selector').style.display = 'block';
-
-  // 啟動相機
   if (PHOTO_REQUIRED) startCamera();
   else document.getElementById('action-panel').style.display = 'block';
 }
@@ -323,7 +364,6 @@ function selectStore(s) {
   loadTodayRecords();
 }
 
-// ── 拍照（使用 file input，iOS/Android 都支援）──────
 function startCamera() {
   document.getElementById('photo-panel').style.display = 'block';
 }
@@ -333,7 +373,6 @@ function onPhotoSelected(event) {
   if (!file) return;
   const reader = new FileReader();
   reader.onload = function(e) {
-    // 壓縮照片
     const img = new Image();
     img.onload = function() {
       const canvas = document.createElement('canvas');
@@ -363,11 +402,8 @@ function retakePhoto() {
   document.getElementById('photo-input').value = '';
 }
 
-// ── 打卡 ───────────────────────────────────
 async function doClock(type) {
   if (!empData) return;
-
-  // GPS 驗證（測試帳號 9999 跳過）
   const isTestAccount = empData.emp_id === '9999';
   const store = STORES.find(s => s.code === currentStore.code);
   if (!isTestAccount && store && store.lat && GPS_RADIUS < 9999) {
@@ -375,11 +411,8 @@ async function doClock(type) {
     const dist = distanceM(gpsPos.coords.latitude, gpsPos.coords.longitude, store.lat, store.lng);
     if (dist > GPS_RADIUS) { showToast('error',`距離門市${Math.round(dist)}m，超出範圍`); return; }
   }
-
   const payload = {
-    action: 'clock',
-    emp_id: empData.emp_id,
-    type: type,
+    action: 'clock', emp_id: empData.emp_id, type: type,
     store_code: currentStore.code,
     lat:  gpsPos ? gpsPos.coords.latitude.toFixed(6)  : '',
     lng:  gpsPos ? gpsPos.coords.longitude.toFixed(6) : '',
@@ -387,8 +420,6 @@ async function doClock(type) {
     device: /iPhone/.test(navigator.userAgent)?'iPhone':/Android/.test(navigator.userAgent)?'Android':'Other',
     photo: photoB64 || ''
   };
-  console.log('photo size:', photoB64 ? photoB64.length : 'null');
-
   showToast('','打卡中...');
   try {
     const res = await api(payload);
@@ -402,7 +433,6 @@ async function doClock(type) {
   } catch(e) { showToast('error','網路錯誤，請重試'); }
 }
 
-// ── 今日記錄 ──────────────────────────────
 async function loadTodayRecords() {
   try {
     const res = await api({action:'status', emp_id:empData.emp_id});
@@ -421,7 +451,6 @@ async function loadTodayRecords() {
   } catch(e) {}
 }
 
-// ── 重置 ───────────────────────────────────
 function resetAll() {
   empData = null; currentStore = null; photoB64 = null;
   document.getElementById('photo-input').value = '';
@@ -431,13 +460,12 @@ function resetAll() {
   document.getElementById('photo-panel').style.display = 'none';
   document.getElementById('action-panel').style.display = 'none';
   document.getElementById('today-records').style.display = 'none';
+  document.getElementById('week-schedule').style.display = 'none';
   document.getElementById('photo-preview').style.display = 'none';
   document.getElementById('camera-wrap').style.display = 'block';
-  document.getElementById('btn-snap').style.display = 'block';
   document.getElementById('btn-retake').style.display = 'none';
 }
 
-// ── API ────────────────────────────────────
 function api(payload) {
   return fetch(APPS_SCRIPT_URL, {
     method:'POST', headers:{'Content-Type':'text/plain'},
@@ -445,7 +473,6 @@ function api(payload) {
   }).then(r=>r.json());
 }
 
-// ── Toast ──────────────────────────────────
 let toastTimer = null;
 function showToast(type, msg) {
   const el = document.getElementById('toast');
